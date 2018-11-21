@@ -8,6 +8,11 @@ if [ -z ${TRAVIS_TAG+x} ]; then
     exit 0
 fi
 
+if [ "$TRAVIS_BRANCH" != "master" ]; then
+    echo "Not a master branch, skipping"
+    exit 0
+fi
+
 # Giovanni, following must be called only when:
 #
 #  * `branch == master`
